@@ -3,16 +3,16 @@ package project.bytebank;
 public class TestReferencia {
     public static void main(String[] args) {
         Cuenta primeraCuenta = new Cuenta(); //project.bytebank.Cuenta@3b9a45b3
-        primeraCuenta.saldo = 200;
+        primeraCuenta.setSaldo(200);
 
         Cuenta segundaCuenta = primeraCuenta; //el objeto hace referencia al espacio en memoria de primera cuenta
-        segundaCuenta.saldo = 100;
-        System.out.println("saldo primera cuenta: " + primeraCuenta.saldo);
-        System.out.println("saldo segunda cuenta: " + segundaCuenta.saldo);
+        segundaCuenta.setSaldo(100);
+        System.out.println("saldo primera cuenta: " + primeraCuenta.getSaldo());
+        System.out.println("saldo segunda cuenta: " + segundaCuenta.getSaldo());
 
-        segundaCuenta.saldo += 400;
-        System.out.println("saldo primera cuenta: " + primeraCuenta.saldo);
-        System.out.println("saldo segunda cuenta: " + segundaCuenta.saldo);
+        segundaCuenta.setSaldo(segundaCuenta.getSaldo() + 400);
+        System.out.println("saldo primera cuenta: " + primeraCuenta.getSaldo());
+        System.out.println("saldo segunda cuenta: " + segundaCuenta.getSaldo());
 
         System.out.println(primeraCuenta); //las 2 tienen el mismo id
         System.out.println(segundaCuenta);
