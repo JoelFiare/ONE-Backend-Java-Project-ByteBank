@@ -2,7 +2,7 @@ package project.bytebank;
 
 public class TestReferencia {
     public static void main(String[] args) {
-        Cuenta primeraCuenta = new Cuenta(); //project.bytebank.Cuenta@3b9a45b3
+        Cuenta primeraCuenta = new Cuenta(1); //project.bytebank.Cuenta@3b9a45b3
         primeraCuenta.depositar(200);
 
         Cuenta segundaCuenta = primeraCuenta; //el objeto hace referencia al espacio en memoria de primera cuenta

@@ -8,6 +8,21 @@ public class Cuenta {
     private int agencia;
     private int numero;
     private Cliente titular = new Cliente(); //cada vez q se cree un obj cuenta se crea un obj cliente
+    //
+    private static int total = 0; //static hace que no sea de la instacia sino de la clase //
+
+    //metodo Constructor te obliga a dar parametros al momento de crear el objeto
+    public Cuenta(int agencia) {
+        System.out.println("Hola, soy el metodo constructor");
+        if (agencia <= 0){
+            System.out.println("no se permite 0");
+            this.agencia = 1;
+        } else {
+            this.agencia = agencia;
+        }
+        total++;
+        System.out.println("Objetos Cuenta creados: " + total);
+    }
 
     //metodos que no retorna valor
     public void depositar(double valor) { //metodo void no retorna nada
@@ -43,11 +58,13 @@ public class Cuenta {
         return agencia;
     }
 
+    /*
     public void setAgencia(int agencia) {
         if (agencia > 0) {
             this.agencia = agencia;
         }
     }
+    */
 
     public int getNumero() {
         return numero;
@@ -65,5 +82,9 @@ public class Cuenta {
 
     public Cliente getTitular() {
         return titular;
+    }
+
+    public static int getTotal() {
+        return total;
     }
 }

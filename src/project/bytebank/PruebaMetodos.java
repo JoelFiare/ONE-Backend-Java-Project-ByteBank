@@ -2,7 +2,7 @@ package project.bytebank;
 
 public class PruebaMetodos {
     public static void main(String[] args) {
-        Cuenta miCuenta = new Cuenta();
+        Cuenta miCuenta = new Cuenta(1);
 
         miCuenta.depositar(300);
         miCuenta.depositar(200);
@@ -12,7 +12,7 @@ public class PruebaMetodos {
         miCuenta.retirar(50);
         System.out.println(miCuenta.getSaldo());
 
-        Cuenta cuentaDeJimena = new Cuenta();
+        Cuenta cuentaDeJimena = new Cuenta(1);
         cuentaDeJimena.depositar(1000);
         System.out.println(cuentaDeJimena.getSaldo());
 
