@@ -4,7 +4,7 @@ public class PruebaMetodos {
     public static void main(String[] args) {
         Cuenta miCuenta = new Cuenta();
 
-        miCuenta.setSaldo(300);
+        miCuenta.depositar(300);
         miCuenta.depositar(200);
 
         System.out.println(miCuenta.getSaldo());

@@ -38,11 +38,6 @@ public class Cuenta {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        if (saldo > 0) {
-            this.saldo = saldo;
-        }
-    }
 
     public int getAgencia() {
         return agencia;
