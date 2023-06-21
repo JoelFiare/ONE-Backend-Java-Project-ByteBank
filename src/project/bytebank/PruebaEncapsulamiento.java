@@ -14,5 +14,7 @@ public class PruebaEncapsulamiento {
 
         Cliente titular = cuenta.getTitular();
         System.out.println(titular);
+        System.out.println(cliente);
+        System.out.println(cuenta.getTitular());
     }
 }
