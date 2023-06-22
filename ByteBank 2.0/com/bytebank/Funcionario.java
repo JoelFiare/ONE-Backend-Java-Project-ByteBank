@@ -3,7 +3,8 @@ package com.bytebank;
 public class Funcionario {
     private String nombre;
     private String documento;
-    private Double salario;
+    private double salario;
+    private int tipo;
 
     public Funcionario() {
     }
@@ -24,11 +25,23 @@ public class Funcionario {
         this.documento = documento;
     }
 
-    public Double getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(Double salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public double getBonificacion(){
+        return this.salario * 0.05;
     }
 }
