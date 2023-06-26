@@ -1,9 +1,11 @@
 package com.bytebank;
 
 public class TestReferencias {
+
     public static void main(String[] args) {
 
-        //elemento mas generico puede ser adaptado al elemento mas especifico
+        // Elemento mas generico puede ser adaptado
+        //                     al elemento mas especifico
         Funcionario funcionario = new Gerente();
         funcionario.setNombre("Diego");
 
@@ -13,9 +15,8 @@ public class TestReferencias {
         funcionario.setSalario(2000);
         gerente.setSalario(10000);
 
-        //funcionario.iniciarSesion("dsa");
-        gerente.iniciarSesion("dsa");
-
+        gerente.iniciarSesion("_ddddd");
 
     }
+
 }
