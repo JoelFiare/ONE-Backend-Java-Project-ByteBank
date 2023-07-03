@@ -1,6 +1,11 @@
-package com.bytebank;
+package com.bytebank.modelo;
 
 public abstract class Cuenta {
+
+    // public       // Accesible desde cualquier parte
+    // --default    // Accesible dentro del paquete
+    // --protected  // Default + Clases hijas
+    // ---private  // Solo desde la misma clase
 
     protected double saldo;
     private int agencia = 1;

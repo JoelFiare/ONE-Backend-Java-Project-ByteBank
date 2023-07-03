@@ -1,4 +1,6 @@
-package com.bytebank;
+package com.bytebank.test;
+
+import com.bytebank.modelo.Annotation;
 
 import java.time.LocalDate;
 
