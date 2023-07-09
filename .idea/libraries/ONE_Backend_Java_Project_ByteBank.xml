@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ONE-Backend-Java-Project-ByteBank">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bytebank-libreria/lib/ONE-Backend-Java-Project-ByteBank.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

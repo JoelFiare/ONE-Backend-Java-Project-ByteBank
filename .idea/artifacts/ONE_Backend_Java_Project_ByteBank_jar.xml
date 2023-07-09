@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ONE-Backend-Java-Project-ByteBank:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ONE_Backend_Java_Project_ByteBank_jar</output-path>
+    <root id="archive" name="ONE-Backend-Java-Project-ByteBank.jar">
+      <element id="module-output" name="ONE-Backend-Java-Project-ByteBank" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/bytebank-libreria/lib/ONE-Backend-Java-Project-ByteBank.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
