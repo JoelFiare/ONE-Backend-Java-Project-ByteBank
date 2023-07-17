@@ -111,4 +111,21 @@ public abstract class Cuenta {
         String cuenta = "Numero: " + this.numero + ", Agencia: " + this.agencia;
         return cuenta;
     }
+
+    /*
+    public boolean esIgual(Cuenta cuenta) {
+        if (this.numero == cuenta.numero && this.agencia == cuenta.agencia) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    */
+
+    @Override
+    public boolean equals(Object obj) {
+        // comparacion basada en valores y no en referencias
+        Cuenta cuenta = (Cuenta) obj;
+        return this.numero == cuenta.numero && this.agencia == cuenta.agencia;
+    }
 }
