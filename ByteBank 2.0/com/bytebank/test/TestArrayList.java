@@ -5,13 +5,19 @@ import com.bytebank.modelo.Cuenta;
 import com.bytebank.modelo.CuentaCorriente;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class TestArrayList {
     public static void main(String[] args) {
 
         // <> forzando que acepte un solo tipo de objeto
         //        generics
-        ArrayList<Cuenta> lista = new ArrayList<>();
+        //ArrayList<Cuenta> lista = new ArrayList<>();
+        //List<Cliente> listaClientes = new LinkedList<>();
+        //obligatorio especificar         no es obligatorio
+        List<Cuenta> lista = new ArrayList<>();
+
         Cuenta cc = new CuentaCorriente(11,22);
         Cuenta cc2 = new CuentaCorriente(13,42);
         Cuenta cc3 = new CuentaCorriente(13,42);
