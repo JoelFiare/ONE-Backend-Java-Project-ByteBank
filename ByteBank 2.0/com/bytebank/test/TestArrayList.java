@@ -7,6 +7,7 @@ import com.bytebank.modelo.CuentaCorriente;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 public class TestArrayList {
     public static void main(String[] args) {
@@ -16,7 +17,9 @@ public class TestArrayList {
         //ArrayList<Cuenta> lista = new ArrayList<>();
         //List<Cliente> listaClientes = new LinkedList<>();
         //obligatorio especificar         no es obligatorio
-        List<Cuenta> lista = new ArrayList<>();
+        List<Cuenta> lista = new ArrayList<>();     //Lista de tipo arraylist
+        List<Cuenta> lista2 = new LinkedList<>();   //Lista de tipo linkedlist
+        List<Cuenta> lista3 = new Vector<>();       //Lista de tipo vector
 
         Cuenta cc = new CuentaCorriente(11,22);
         Cuenta cc2 = new CuentaCorriente(13,42);
