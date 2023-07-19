@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class TestOrdenarLista {
+public class TestLambda {
     public static void main(String[] args) {
         Cuenta cc1 = new CuentaCorriente(62, 33);
         Cliente clienteCC1 = new Cliente();
@@ -47,13 +47,6 @@ public class TestOrdenarLista {
             System.out.println(cuenta);
         }
 
-        // Ordenar las cuentas
-        // Cualquier clase que extienda de Cuenta
-        // Comparator <? extend Cuenta> c
-
-        // POR NOMBRE DE CUENTA
-        //Comparator<Cuenta> comparator = new OrdenadorPorNumeroCuenta();
-        //lista.sort(comparator);
         lista.sort(new OrdenadorPorNumeroCuenta());
 
         System.out.println("Despues de ordenar");
@@ -61,16 +54,19 @@ public class TestOrdenarLista {
             System.out.println(cuenta);
         }
 
-        // POR TITULAR
-        //Comparator<Cuenta> comparator2 = new OrdenadoPorTitular();
-        //lista.sort(comparator2);
         lista.sort(new OrdenadoPorTitular());
-        lista.sort(new Comparator<Cuenta>() {
+
+        // Usando Lambdas
+        //no va el return por que no tiene {} ya lo define el compare que retorna un int
+        lista.sort((Cuenta o1, Cuenta o2) -> Integer.compare(o1.getNumero(), o2.getNumero()));
+
+        //forma anterior
+        /*lista.sort(new Comparator<Cuenta>() {
             @Override
             public int compare(Cuenta o1, Cuenta o2) {
                 return Integer.compare(o1.getNumero(), o2.getNumero());
             }
-        });
+        });*/
 
         System.out.println("todo en uno");
         for (Cuenta cuenta : lista) {
@@ -78,18 +74,16 @@ public class TestOrdenarLista {
         }
 
         System.out.println("Despues de ordenar por titular");
-        for (Cuenta cuenta : lista) {
+        /*for (Cuenta cuenta : lista) {
             System.out.println(cuenta);
-        }
+        }*/
+        // FOR each con lambda
+        lista.forEach(cuenta -> System.out.println(cuenta));
 
-        // Forma antigua
         System.out.println("Despues de ordenar por orden natural");
-        Collections.sort(lista, new Comparator<Cuenta>() {
-            @Override
-            public int compare(Cuenta o1, Cuenta o2) {
-                return o1.getTitular().getNombre().compareTo(o2.getTitular().getNombre());
-            }
-        });
+
+        //otra forma de Lambda
+        Collections.sort(lista, (c1, c2) -> c1.getTitular().getNombre().compareTo(c2.getTitular().getNombre()));
 
         Collections.sort(lista);
         for (Cuenta cuenta : lista) {
@@ -97,30 +91,3 @@ public class TestOrdenarLista {
         }
     }
 }
-
-class OrdenadorPorNumeroCuenta implements Comparator<Cuenta> {
-    @Override
-    public int compare(Cuenta cuenta1, Cuenta cuenta2) {
-        //forma basica
-        /*if (cuenta1.getNumero() == cuenta2.getNumero()) {
-            return 0;
-        } else if (cuenta1.getNumero() > cuenta2.getNumero()) {
-            return 1;
-        } else {
-            return -1;
-        }*/
-        //forma intermedia
-        //return cuenta1.getNumero() - cuenta2.getNumero();
-
-        //forma wrapper
-        return Integer.compare(cuenta1.getNumero(), cuenta2.getNumero());
-    }
-}
-
-class OrdenadoPorTitular implements Comparator<Cuenta> {
-    @Override
-    public int compare(Cuenta cuenta1, Cuenta cuenta2) {
-        return cuenta1.getTitular().getNombre().compareTo(cuenta2.getTitular().getNombre());
-    }
-}
-
