@@ -8,7 +8,7 @@ package com.bytebank.modelo;
  *
  */
 
-public abstract class Cuenta {
+public abstract class Cuenta implements Comparable<Cuenta> {
 
     // public       // Accesible desde cualquier parte
     // --default    // Accesible dentro del paquete
@@ -108,7 +108,7 @@ public abstract class Cuenta {
 
     @Override
     public String toString() {
-        String cuenta = "Numero: " + this.numero + ", Agencia: " + this.agencia;
+        String cuenta = "Numero: " + this.numero + ", Agencia: " + this.agencia + ", Titular: " + this.titular.getNombre();
         return cuenta;
     }
 
@@ -127,5 +127,12 @@ public abstract class Cuenta {
         // comparacion basada en valores y no en referencias
         Cuenta cuenta = (Cuenta) obj;
         return this.numero == cuenta.numero && this.agencia == cuenta.agencia;
+    }
+
+    @Override
+    public int compareTo(Cuenta o) {
+        //orden natural: Numero agencia
+        //return Integer.compare(this.agencia, o.agencia); // por numero de agencia
+        return Double.compare(this.getSaldo(), o.getSaldo());
     }
 }
